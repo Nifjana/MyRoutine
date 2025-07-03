@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="alert alert-info mb-4">
+                <ul class="list-unstyled">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+    <h1> Hello fresh mind. Here we alaws have place for smart and beautiful people like you </h1>
+    <form action="/register" method="post">
+        <label for="name"> Your name: </label>
+        <input type="text" name="name" id="name" placeholder="John Doe" required>
+        <label for="email">Your email</label>
+        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required>
+        <label for="confpass">Confirm Password: </label>
+        <input type="password" name="confpass" id="confpass" required>
+        <button type="submit"> Login </button>
+    </form>
+    <p>Do you already have an account? <a href="/">Sing in</a> here</p>
+</body>
+</html>

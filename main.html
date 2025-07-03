@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="alert alert-info mb-4">
+                <ul class="list-unstyled">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+    <h1>Welcome {{current_user.name}}</h1>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in those_users %}
+        <tr>{{i.id}}</tr>
+        <tr>{{i.name}}</tr>
+        <tr>{{i.email}}</tr>
+        {% endfor %}
+    </tbody>
+    <br><br><br>
+    <a href="/logout">logout</a>
+</body>
+</html>

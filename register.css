@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    font-family: 'Inter', sans-serif;
+    color: #eaeaea;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00ffbf;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 8px #00ffbf55;
+}
+
+form {
+    background-color: #1a1a1a;
+    padding: 30px 40px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0, 255, 191, 0.1);
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #b0b0b0;
+}
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: #f0f0f0;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #00ffbf;
+    outline: none;
+    box-shadow: 0 0 8px #00ffbf88;
+}
+
+button {
+    background-color: #00ffbf;
+    color: #121212;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00e6aa;
+}
+
+.alert {
+    background-color: #252525;
+    border-left: 4px solid #00ffbf;
+    color: #dddddd;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 0 10px #00ffbf22;
+}
+
+p {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+a {
+    color: #00ffbf;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #00e6aa;
+    text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+    form, .alert {
+        width: 90vw;
+    }
+}
